@@ -8,6 +8,8 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
+// er
+
 mongoose.connect(
     "mongodb+srv://restaurantradar:restaurantradar@cluster0.twyqru6.mongodb.net/restaurantradar?retryWrites=true&w=majority&appName=Cluster0"
   );
