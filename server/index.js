@@ -36,5 +36,5 @@ app.post("/createUser", async (req, res) => {
   });
 
 app.listen(3001, () => {
-    console.log("SERVER RUNS PERFECTLY!");
+    console.log("SERVER RUNS!");
   });
