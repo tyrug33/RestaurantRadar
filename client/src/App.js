@@ -8,9 +8,17 @@ function App() {
   const [age, setAge] = useState(0);
   const [username, setUsername] = useState("");
 
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+
   useEffect(() => {
     Axios.get("http://localhost:3001/getUsers").then((response) => {
       setListOfUsers(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getRestaurants").then((response) => {
+      setListOfRestaurants(response.data);
     });
   }, []);
 
@@ -33,13 +41,25 @@ function App() {
 
   return (
     <div className="App">
-      <div className="usersDisplay">
+      {/* <div className="usersDisplay">
         {listOfUsers.map((user) => {
           return (
             <div>
               <h1>Name: {user.name}</h1>
               <h1>Age: {user.age}</h1>
               <h1>Username: {user.username}</h1>
+            </div>
+          );
+        })}
+      </div> */}
+
+      <div className="restaurantsDisplay">
+        {listOfRestaurants.map((restaurant) => {
+          return (
+            <div>
+              <h1>Name: {restaurant.restaurantName}</h1>
+              <h1>Address: {restaurant.restaurantAddress}</h1>
+              <h1>Average Star Rating: {restaurant.restaurantAvgStarRating}</h1>
             </div>
           );
         })}

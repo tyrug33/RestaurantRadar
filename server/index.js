@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const UserModel = require("./models/Users");
+const RestaurantModel = require("./models/Restaurants");
 
 const cors = require("cors");
 
@@ -38,3 +39,18 @@ app.post("/createUser", async (req, res) => {
 app.listen(3001, () => {
     console.log("SERVER RUNS!");
   });
+
+  app.get("/getRestaurants", (req, res) => {
+    RestaurantModel.find({}).exec()
+        .then(result => {
+            if (result.length === 0) {
+                res.status(404).json({ message: "No restaurants found" });
+            } else {
+                res.status(200).json(result);
+            }
+        })
+        .catch(err => {
+            console.error("Error fetching users:", err);
+            res.status(500).json({ message: "Internal server error" });
+        });
+});
