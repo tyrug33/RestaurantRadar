@@ -11,7 +11,7 @@ import {
   NavDropdown,
   Container,
   Form,
-  PlaceHolder,
+  // PlaceHolder,
   Col,
   Row
 } from "react-bootstrap";
