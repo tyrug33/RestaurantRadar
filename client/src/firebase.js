@@ -8,7 +8,7 @@ const firebaseConfig = {
     storageBucket: "restaurantradar-94824.appspot.com",
     messagingSenderId: "405444063764",
     appId: "1:405444063764:web:ebd6f2bf35966cd1ad6d01"
-  };  
+  };  // API keys and firebase config
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

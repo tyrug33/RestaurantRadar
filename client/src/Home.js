@@ -12,14 +12,12 @@ import {
   NavDropdown,
   Container,
   Form,
-  // PlaceHolder,
   Col,
   Row,
   Collapse
 } from "react-bootstrap";
 
 function Home() {
-  // const [listOfUsers, setListOfUsers] = useState([]);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,74 +26,17 @@ function Home() {
 
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
-  // useEffect(() => {
-  //   Axios.get("http://localhost:3001/getUsers").then((response) => {
-  //     setListOfUsers(response.data);
-  //   });
-  // }, []);
 
-  useEffect(() => {
+
+  useEffect(() => { {/* Axios link to grab the restaurants from the mongodb */}
     Axios.get("http://localhost:3001/getRestaurants").then((response) => {
       setListOfRestaurants(response.data);
     });
   }, []);
 
-  // const createUser = () => {
-  //   Axios.post("http://localhost:3001/createUser", {
-  //     name,
-  //     username,
-  //     password,
-  //   }).then((response) => {
-  //     setListOfUsers([
-  //       ...listOfUsers,
-  //       {
-  //         name,
-  //         username,
-  //         password,
-  //       },
-  //     ]);
-  //   });
-  // };
+
 
   return (
-    // <div className="App">
-    //   <div className="restaurantsDisplay">
-    //     {listOfRestaurants.map((restaurant) => {
-    //       return (
-    //         <div>
-    //           <h1>Name: {restaurant.restaurantName}</h1>
-    //           <h1>Address: {restaurant.restaurantAddress}</h1>
-    //           <h1>Average Star Rating: {restaurant.restaurantAvgStarRating}</h1>
-    //         </div>
-    //       );
-    //     })}
-    //   </div>
-
-    //   <div>
-    //     <input
-    //       type="text"
-    //       placeholder="Name..."
-    //       onChange={(event) => {
-    //         setName(event.target.value);
-    //       }}
-    //     />
-    //     <input
-    //       type="text"
-    //       placeholder="Username..."
-    //       onChange={(event) => {
-    //         setUsername(event.target.value);
-    //       }}
-    //     />
-    //     <input
-    //       type="text"
-    //       placeholder="Password..."
-    //       onChange={(event) => {
-    //         setPassword(event.target.value);
-    //       }}
-    //     />
-    //     <button onClick={createUser}> Create User </button>
-    //   </div>
-    // </div>
 
     <div className="App">
       <Navbar
@@ -114,24 +55,14 @@ function Home() {
               navbarScroll
             >
               <Nav.Link href="/">Home</Nav.Link>
-              {/* <Nav.Link href="#action2">Link</Nav.Link> */}
-              {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Test</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">Test</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">Test</NavDropdown.Item>
-              </NavDropdown> */}
-              {/* <Nav.Link href="#" disabled>
-                Link
-              </Nav.Link> */}
              <Nav.Link href="/login">Login</Nav.Link>
-             <Nav.Link href="/reviews">Reviews</Nav.Link>
+             <Nav.Link href="/reviews">Reviews</Nav.Link> {/* Navbar links */}
 
             </Nav>
             <Form className="d-flex">
               <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="Search" {/* Search bar implementation */}
                 className="me-2"
                 aria-label="Search"
                 onChange={(event) => {
@@ -160,18 +91,7 @@ function Home() {
                   <Card.Title>Name: {restaurant.restaurantName}</Card.Title>
                   <Card.Text>
                     Address: {restaurant.restaurantAddress} Rating: {restaurant.restaurantAvgStarRating}
-                  </Card.Text>
-                  {/* <Button variant="primary" onClick={() => setOpen(restaurant.restaurantName)}
-                    aria-controls="example-collapse-text"
-                    aria-expanded={open === restaurant.restaurantName}
-                  >Test</Button>
-                  <Collapse in={open === restaurant.restaurantName}>
-                    <div id="example-collapse-text">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                      terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                      labore wes anderson cred nesciunt sapiente ea proident.
-                    </div> */}
-                  {/* </Collapse> */}
+                  </Card.Text> {/* Restaurant card data*/} 
                 </Card.Body>
               </Card>
             </Col>

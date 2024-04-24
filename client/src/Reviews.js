@@ -58,19 +58,6 @@ function Review() {
   };
 
   return (
-    // <div className="App">
-    //   <div className="restaurantsDisplay">
-    //     {listOfRestaurants.map((restaurant) => {
-    //       return (
-    //         <div>
-    //           <h1>Name: {restaurant.restaurantName}</h1>
-    //           <h1>Address: {restaurant.restaurantAddress}</h1>
-    //           <h1>Average Star Rating: {restaurant.restaurantAvgStarRating}</h1>
-    //         </div>
-    //       );
-    //     })}
-    //   </div>
-
       <div>
         <input
           type="text"
@@ -90,7 +77,7 @@ function Review() {
           type="text"
           placeholder="Review..."
           onChange={(event) => {
-            setPassword(event.target.value);
+            setPassword(event.target.value); {/* Review page */}
           }}
         />
         <button onClick={createUser}> Post Review </button>

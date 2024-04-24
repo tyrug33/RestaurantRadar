@@ -24,7 +24,7 @@ const Signup = () => {
             setNotice("Passwords don't match. Please try again.");
         }
     };
-
+    
     return(
         <div className = "container">
             <div className = "row justify-content-center">
@@ -53,7 +53,7 @@ const Signup = () => {
                         <span>Go back to home? <Link to = "/">Click here.</Link></span>
                     </div>                    
                 </form>
-            </div>
+            </div> {/* Form to create an account */}
         </div>
     )
 }
