@@ -18,7 +18,7 @@ import {
   Collapse
 } from "react-bootstrap";
 
-function Home() {
+function Review() {
   // const [listOfUsers, setListOfUsers] = useState([]);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -143,47 +143,6 @@ function Home() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
-      <div className="usersDisplay">
-        <Row xs={2} md={3} className="g-4">
-        {listOfRestaurants.map((restaurant, idx) => {
-          const searchString = search.toLowerCase();
-          if (!restaurant.restaurantName.toLowerCase().includes(searchString)) {
-            return null
-          }
-          return (
-
-              <><Col key={idx} className="d-flex justify-content-center">
-              <Card style={{ width: "20rem", justifyContent: 'space-between' }}>
-                <Card.Img variant="top" src="defaultrest.jpg"></Card.Img>
-                <Card.Body>
-                  <Card.Title>Name: {restaurant.restaurantName}</Card.Title>
-                  <Card.Text>
-                    Address: {restaurant.restaurantAddress} Rating: {restaurant.restaurantAvgStarRating}
-                  </Card.Text>
-                  {/* <Button variant="primary" onClick={() => setOpen(restaurant.restaurantName)}
-                    aria-controls="example-collapse-text"
-                    aria-expanded={open === restaurant.restaurantName}
-                  >Test</Button>
-                  <Collapse in={open === restaurant.restaurantName}>
-                    <div id="example-collapse-text">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                      terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                      labore wes anderson cred nesciunt sapiente ea proident.
-                    </div> */}
-                  {/* </Collapse> */}
-                </Card.Body>
-              </Card>
-            </Col>
-            
-            </>
-          );
-          
-        })}
-        </Row>
-      </div>
-
-
     </div>
 
 
@@ -191,4 +150,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Review;

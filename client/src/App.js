@@ -5,6 +5,8 @@ import Home from './Home'; // Import your home page component
 import Login from './Login'; // Import your login page component
 import Signup from "./Signup";
 import Profile from "./Profile";
+import Review from './Reviews';
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
           <Route path = "/login/signup" element = { <Signup></Signup> } ></Route>
           <Route path = "/login/profile" element = { <Profile></Profile> }></Route>
           <Route path="/" element={<Home />} /> {/* Home page route */}
+          <Route path="/reviews" element={<Review />} />
         </Routes>
       </div>
     </Router>
